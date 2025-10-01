@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nemah Min Allah - Official Website</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="resources/css/style.css">
+</head>
+<body>
+
+    <!-- Navigation Menu -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container d-flex align-items-center">
+
+        <!-- Desktop language (shows on lg and up) -->
+        <div class="lang-container d-none d-lg-block">
+        <button id="langToggle" class="lang-btn">
+            <i class="fas fa-language"></i> <span id="languageText">English</span>
+        </button>
+        </div>
+
+        <!-- Brand -->
+        <a class="navbar-brand" href="index.html" id="siteTitle">Nemah Min Allah</a>
+
+        <!-- Toggler (HAMBURGER) - make sure this exists -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu links (centered on large screens) -->
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html" id="navHome">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html" id="navAbout">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="chapters.html" id="navChapters">Chapters</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html" id="navContact">Contact</a></li>
+
+            <!-- Mobile-only language toggle = LAST item in collapsed menu -->
+            <li class="nav-item lang-toggle d-lg-none">
+            <button id="langToggleMobile" class="lang-btn w-100">
+                <i class="fas fa-language"></i> <span id="languageTextMobile">English</span>
+            </button>
+            </li>
+        </ul>
+        </div>
+    </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+            <div class="slide-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title" id="heroTitle">Nemah Min Allah</h1>
+            <p class="hero-subtitle" id="heroSubtitle">A journey of faith, hope, and divine blessings</p>
+            <button class="hero-btn" id="heroBtn">Discover the Book</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about-section">
+        <div class="container">
+            <h2 class="section-title" id="aboutTitle">About the Book</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Book Cover" class="img-fluid book-cover">
+                </div>
+                <div class="col-md-6">
+                    <h3 id="bookTitle">Nemah Min Allah</h3>
+                    <p id="bookDescription">"Nemah Min Allah" is a profound exploration of spiritual awakening and divine grace. Through captivating narratives and insightful reflections, this book takes readers on a transformative journey that illuminates the path to inner peace and connection with the divine.</p>
+                    <p id="bookDescription2">Written with deep wisdom and compassion, this work resonates with seekers of truth from all walks of life, offering guidance and inspiration for navigating life's challenges with faith and resilience.</p>
+                    <button class="btn btn-success mt-3" id="purchaseBtn">Purchase Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title" id="featuresTitle">Key Themes</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4 id="theme1Title">Spiritual Awakening</h4>
+                        <p id="theme1Desc">Explore the journey of self-discovery and connection with the divine essence within.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h4 id="theme2Title">Divine Grace</h4>
+                        <p id="theme2Desc">Understand how divine blessings manifest in everyday life and how to recognize them.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-peace"></i>
+                        </div>
+                        <h4 id="theme3Title">Inner Peace</h4>
+                        <p id="theme3Desc">Learn practices and perspectives that cultivate lasting peace amidst life's turbulence.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section" style="background-color: #f9f9f9;">
+        <div class="container">
+            <h2 class="section-title" id="testimonialsTitle">What Readers Say</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text" id="testimonial1">"This book transformed my perspective on faith and daily life. The wisdom within these pages is truly divine."</p>
+                        <p class="testimonial-author">- Sarah Johnson</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text" id="testimonial2">"A masterpiece of spiritual literature. Each chapter brought me closer to understanding my purpose."</p>
+                        <p class="testimonial-author">- Ahmed Hassan</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text" id="testimonial3">"I've read many spiritual books, but none have resonated with me as deeply as Nemah Min Allah."</p>
+                        <p class="testimonial-author">- Maria Rodriguez</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h4 class="footer-title" id="footerTitle">Nemah Min Allah</h4>
+                    <p id="footerDesc">A journey of faith, hope, and divine blessings that illuminates the path to inner peace.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h4 class="footer-title" id="linksTitle">Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="#" id="linkHome">Home</a>
+                        <a href="#" id="linkAbout">About</a>
+                        <a href="#" id="linkThemes">Themes</a>
+                        <a href="#" id="linkPurchase">Purchase</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h4 class="footer-title" id="contactTitle">Contact</h4>
+                    <div class="footer-links">
+                        <a href="mailto:info@nemahminallah.com" id="contactEmail">info@nemahminallah.com</a>
+                        <a href="#" id="contactForm">Contact Form</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p id="copyrightText">&copy; 2023 Nemah Min Allah. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Language Data
+        const translations = {
+            en: {
+                // Navigation
+                siteTitle: "Nemah Min Allah",
+                navHome: "Home",
+                navAbout: "About",
+                navChapters: "Chapters",
+                navContact: "Contact",
+                language: "English",
+
+                // Hero Section
+                heroTitle: "Nemah Min Allah",
+                heroSubtitle: "A journey of faith, hope, and divine blessings",
+                heroBtn: "Discover the Book",
+                
+                // About Section
+                aboutTitle: "About the Book",
+                bookTitle: "Nemah Min Allah",
+                bookDescription: "The main purpose of this book is to help us appreciate God's blessings in all aspects of our lives and to enjoy them in this world, both now and in the hereafter.",
+                bookDescription2: "Most importantly, we should praise and thank God, the Almighty, for all these blessings.  There are also many opportunities for us to take advantage of, and so I say: 'Look at the clear sky; you will find it full of stars'.",
+                purchaseBtn: "Purchase Now",
+                
+                // Features Section
+                featuresTitle: "Key Themes",
+                theme1Title: "Spiritual Awakening",
+                theme1Desc: "Explore the journey of self-discovery and connection with the divine essence within.",
+                theme2Title: "Divine Grace",
+                theme2Desc: "Understand how divine blessings manifest in everyday life and how to recognize them.",
+                theme3Title: "Inner Peace",
+                theme3Desc: "Learn practices and perspectives that cultivate lasting peace amidst life's turbulence.",
+                
+                // Testimonials
+                testimonialsTitle: "What Readers Say",
+                testimonial1: "\"This book transformed my perspective on faith and daily life. The wisdom within these pages is truly divine.\"",
+                testimonial2: "\"A masterpiece of spiritual literature. Each chapter brought me closer to understanding my purpose.\"",
+                testimonial3: "\"I've read many spiritual books, but none have resonated with me as deeply as Nemah Min Allah.\"",
+                
+                // Footer
+                footerTitle: "Nemah Min Allah",
+                footerDesc: "A journey of faith, hope, and divine blessings that illuminates the path to inner peace.",
+                linksTitle: "Quick Links",
+                linkHome: "Home",
+                linkAbout: "About",
+                linkThemes: "Themes",
+                linkPurchase: "Purchase",
+                contactTitle: "Contact",
+                contactEmail: "info@nemahminallah.com",
+                contactForm: "Contact Form",
+                copyrightText: "© 2023 Nemah Min Allah. All rights reserved."
+            },
+            ar: {
+                // Navigation
+                siteTitle: "نعمة من الله",
+                navHome: "الرئيسية",
+                navAbout: "عن الكتاب",
+                navChapters: "الفصول",
+                navContact: "اتصل بنا",
+                language: "العربية",
+
+                // Hero Section
+                heroTitle: "نعمة من الله",
+                heroSubtitle: "رحلة إيمان وأمل وبركات إلهية",
+                heroBtn: "اكتشف الكتاب",
+                
+                // About Section
+                aboutTitle: "عن الكتاب",
+                bookTitle: "نعمة من الله",
+                bookDescription: "ان الهدف الاساسي من الكتاب هو استشعار نعم الله علينا في كل جوانب حياتنا وايضا الاستمتاع بهذه النعم في حياة الدنيا قبل الاخره.",
+                bookDescription2: "واهم امر هو حمد الله سبحانه وتعالي علي كل هذه النعم ، وايضا هناك فرص كتيره للانسان يجب استثمارها ولذلك اقول ( أنظر الي السماء الصافية تجدها مليئة بالنجوم ).",
+                purchaseBtn: "اشتر الآن",
+                
+                // Features Section
+                featuresTitle: "الموضوعات الرئيسية",
+                theme1Title: "الصحوة الروحية",
+                theme1Desc: "استكشف رحلة الاكتشاف الذاتي والاتصال بالجوهر الإلهي في الداخل.",
+                theme2Title: "النعمة الإلهية",
+                theme2Desc: "افهم كيف تظهر البركات الإلهية في الحياة اليومية وكيفية التعرف عليها.",
+                theme3Title: "السلام الداخلي",
+                theme3Desc: "تعلم الممارسات والمنظورات التي تزرع السلام الدائم وسط اضطرابات الحياة.",
+                
+                // Testimonials
+                testimonialsTitle: "ماذا يقول القراء",
+                testimonial1: "\"هذا الكتاب غير وجهة نظري حول الإيمان والحياة اليومية. الحكمة داخل هذه الصفحات هي حقًا إلهية.\"",
+                testimonial2: "\"تحفة من الأدب الروحي. كل فصل قربني من فهم هدفي.\"",
+                testimonial3: "\"لقد قرأت العديد من الكتب الروحية، ولكن لم يتردد صدى أي منها معي بعمق مثل نعمة من الله.\"",
+                
+                // Footer
+                footerTitle: "نعمة من الله",
+                footerDesc: "رحلة إيمان وأمل وبركات إلهية تنير طريق السلام الداخلي.",
+                linksTitle: "روابط سريعة",
+                linkHome: "الرئيسية",
+                linkAbout: "عن الكتاب",
+                linkThemes: "الموضوعات",
+                linkPurchase: "الشراء",
+                contactTitle: "اتصل بنا",
+                contactEmail: "info@nemahminallah.com",
+                contactForm: "نموذج الاتصال",
+                copyrightText: "© 2023 نعمة من الله. جميع الحقوق محفوظة."
+            }
+        };
+
+        // Current language
+        let currentLang = 'en';
+
+        // DOM Elements - Now including navigation elements
+        const langToggle = document.getElementById('langToggle');
+        const textElements = {
+            // Navigation Elements
+            siteTitle: document.getElementById('siteTitle'),
+            navHome: document.getElementById('navHome'),
+            navAbout: document.getElementById('navAbout'),
+            navChapters: document.getElementById('navChapters'),
+            navContact: document.getElementById('navContact'),
+            languageText: document.getElementById('languageText'),
+            
+            // Hero Section
+            heroTitle: document.getElementById('heroTitle'),
+            heroSubtitle: document.getElementById('heroSubtitle'),
+            heroBtn: document.getElementById('heroBtn'),
+            
+            // About Section
+            aboutTitle: document.getElementById('aboutTitle'),
+            bookTitle: document.getElementById('bookTitle'),
+            bookDescription: document.getElementById('bookDescription'),
+            bookDescription2: document.getElementById('bookDescription2'),
+            purchaseBtn: document.getElementById('purchaseBtn'),
+            
+            // Features Section
+            featuresTitle: document.getElementById('featuresTitle'),
+            theme1Title: document.getElementById('theme1Title'),
+            theme1Desc: document.getElementById('theme1Desc'),
+            theme2Title: document.getElementById('theme2Title'),
+            theme2Desc: document.getElementById('theme2Desc'),
+            theme3Title: document.getElementById('theme3Title'),
+            theme3Desc: document.getElementById('theme3Desc'),
+            
+            // Testimonials
+            testimonialsTitle: document.getElementById('testimonialsTitle'),
+            testimonial1: document.getElementById('testimonial1'),
+            testimonial2: document.getElementById('testimonial2'),
+            testimonial3: document.getElementById('testimonial3'),
+            
+            // Footer
+            footerTitle: document.getElementById('footerTitle'),
+            footerDesc: document.getElementById('footerDesc'),
+            linksTitle: document.getElementById('linksTitle'),
+            linkHome: document.getElementById('linkHome'),
+            linkAbout: document.getElementById('linkAbout'),
+            linkThemes: document.getElementById('linkThemes'),
+            linkPurchase: document.getElementById('linkPurchase'),
+            contactTitle: document.getElementById('contactTitle'),
+            contactEmail: document.getElementById('contactEmail'),
+            contactForm: document.getElementById('contactForm'),
+            copyrightText: document.getElementById('copyrightText')
+        };
+
+       // Language Toggle Function
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+
+            // Update BOTH language buttons
+            const newLabel = currentLang === 'en' ? 'English' : 'العربية';
+            const iconHtml = `<i class="fas fa-language"></i> ${newLabel}`;
+
+            if (langToggle) langToggle.innerHTML = iconHtml;
+            if (langToggleMobile) langToggleMobile.innerHTML = iconHtml;
+
+            // Update all text elements
+            for (const [key, element] of Object.entries(textElements)) {
+                if (element) {
+                    element.textContent = translations[currentLang][key];
+
+                    // Add/remove Arabic styling
+                    if (currentLang === 'ar') {
+                        element.classList.add('arabic-text');
+                    } else {
+                        element.classList.remove('arabic-text');
+                    }
+                }
+            }
+
+            // Update direction of the page
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+
+            // Move language toggle position based on language
+            moveLanguageToggle();
+        }
+
+        // Move language toggle to correct position (desktop only)
+        // NOTE: mobile toggle is always inside menu as last item
+        function moveLanguageToggle() {
+            const langToggleElement = document.querySelector('.lang-container');
+            const navbarContainer = document.querySelector('.navbar .container');
+
+            if (langToggleElement && navbarContainer) {
+                if (currentLang === 'ar') {
+                    // For Arabic: push to right side in desktop
+                    navbarContainer.appendChild(langToggleElement);
+                } else {
+                    // For English: push to left side in desktop
+                    navbarContainer.insertBefore(langToggleElement, navbarContainer.firstChild);
+                }
+            }
+        }
+
+        // Initialize language
+        document.addEventListener('DOMContentLoaded', function () {
+            // Grab both toggle buttons
+            window.langToggle = document.getElementById('langToggle');          // desktop
+            window.langToggleMobile = document.getElementById('langToggleMobile'); // mobile
+
+            // Set initial language
+            updatePageContent();
+
+            // Add event listeners to BOTH buttons
+            if (langToggle) langToggle.addEventListener('click', toggleLanguage);
+            if (langToggleMobile) langToggleMobile.addEventListener('click', toggleLanguage);
+
+            // Initialize image slider
+            initImageSlider();
+        });
+
+
+        // Update page content based on current language
+        function updatePageContent() {
+            // Update all text elements
+            for (const [key, element] of Object.entries(textElements)) {
+                if (element) {
+                    element.textContent = translations[currentLang][key];
+                    
+                    // Add/remove Arabic styling
+                    if (currentLang === 'ar') {
+                        element.classList.add('arabic-text');
+                    } else {
+                        element.classList.remove('arabic-text');
+                    }
+                }
+            }
+            
+            // Update button text
+            langToggle.innerHTML = `<i class="fas fa-language"></i> ${currentLang === 'en' ? 'English' : 'العربية'}`;
+            
+            // Update direction of the page
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            
+            // Move language toggle to correct position
+            moveLanguageToggle();
+        }
+
+        // Image Slider Functionality
+        function initImageSlider() {
+            const slides = document.querySelectorAll('.slide');
+            let currentSlide = 0;
+            
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                slides[index].classList.add('active');
+            }
+            
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+            
+            // Change slide every 5 seconds
+            setInterval(nextSlide, 5000);
+        }
+    </script>
+</body>
+</html>

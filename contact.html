@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Nemah Min Allah</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="resources/css/style.css">
+</head>
+<body>
+
+    <!-- Navigation Menu -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container d-flex align-items-center">
+
+            <!-- Desktop language (shows on lg and up) -->
+            <div class="lang-container d-none d-lg-block">
+                <button id="langToggle" class="lang-btn">
+                    <i class="fas fa-language"></i> <span id="languageText">English</span>
+                </button>
+            </div>
+
+            <!-- Brand -->
+            <a class="navbar-brand" href="index.html" id="siteTitle">Nemah Min Allah</a>
+
+            <!-- Toggler (HAMBURGER) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu links (centered on large screens) -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html" id="navHome">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html" id="navAbout">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="chapters.html" id="navChapters">Chapters</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html" id="navContact">Contact</a></li>
+
+                    <!-- Mobile-only language toggle = LAST item in collapsed menu -->
+                    <li class="nav-item lang-toggle d-lg-none">
+                        <button id="langToggleMobile" class="lang-btn w-100">
+                            <i class="fas fa-language"></i> <span id="languageTextMobile">English</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero Section -->
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <h1 class="page-hero-title" id="contactHeroTitle">Contact Us</h1>
+            <p class="page-hero-subtitle" id="contactHeroSubtitle">Get in touch with us for any inquiries or feedback</p>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="section contact-form-section">
+        <div class="container">
+            <h2 class="section-title" id="contactFormTitle">Send Us a Message</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-form-card">
+                        <form id="contactForm" novalidate>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="firstName" class="form-label" id="firstNameLabel">First Name *</label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                    <div class="invalid-feedback" id="firstNameError">
+                                        Please provide your first name.
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="lastName" class="form-label" id="lastNameLabel">Last Name *</label>
+                                    <input type="text" class="form-control" id="lastName" required>
+                                    <div class="invalid-feedback" id="lastNameError">
+                                        Please provide your last name.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label" id="emailLabel">Email Address *</label>
+                                <input type="email" class="form-control" id="email" required>
+                                <div class="invalid-feedback" id="emailError">
+                                    Please provide a valid email address.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label" id="subjectLabel">Subject *</label>
+                                <input type="text" class="form-control" id="subject" required>
+                                <div class="invalid-feedback" id="subjectError">
+                                    Please provide a subject for your message.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label" id="messageLabel">Message *</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                                <div class="invalid-feedback" id="messageError">
+                                    Please provide your message.
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-success btn-lg" id="submitBtn">
+                                <i class="fas fa-paper-plane me-2"></i>
+                                <span id="submitBtnText">Send Message</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="section contact-info-section" style="background-color: #f9f9f9;">
+        <div class="container">
+            <h2 class="section-title" id="contactInfoTitle">Get In Touch</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="contact-info-card text-center">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h4 id="addressTitle">Address</h4>
+                        <p id="addressText">Dubai, United Arab Emirates</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="contact-info-card text-center">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h4 id="emailTitle">Email</h4>
+                        <p id="emailText">info@nemahminallah.com</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="contact-info-card text-center">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h4 id="phoneTitle">Phone</h4>
+                        <p id="phoneText">+971 50 123 4567</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section">
+        <div class="container">
+            <h2 class="section-title" id="faqTitle">Frequently Asked Questions</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" id="faqQuestion1">
+                                    How can I purchase the book?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body" id="faqAnswer1">
+                                    You can purchase "Nemah Min Allah" from major bookstores across the UAE or through our online retailers. Both paperback and e-book formats are available.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" id="faqQuestion2">
+                                    Is the book available in other languages?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body" id="faqAnswer2">
+                                    Currently, "Nemah Min Allah" is available in both English and Arabic. We are working on translations to other languages in the near future.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" id="faqQuestion3">
+                                    Can I request a signed copy?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body" id="faqAnswer3">
+                                    Yes, signed copies are available for special orders. Please contact us directly for more information about obtaining a signed copy.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" id="faqQuestion4">
+                                    Are there any upcoming events or book signings?
+                                </button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body" id="faqAnswer4">
+                                    We regularly host events and book signings. Please check our website or social media channels for updates on upcoming events.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h4 class="footer-title" id="footerTitle">Nemah Min Allah</h4>
+                    <p id="footerDesc">A journey of faith, hope, and divine blessings that illuminates the path to inner peace.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h4 class="footer-title" id="linksTitle">Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="index.html" id="linkHome">Home</a>
+                        <a href="about.html" id="linkAbout">About</a>
+                        <a href="chapters.html" id="linkChapters">Chapters</a>
+                        <a href="contact.html" id="linkContact">Contact</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h4 class="footer-title" id="contactTitle">Contact</h4>
+                    <div class="footer-links">
+                        <a href="mailto:info@nemahminallah.com" id="contactEmail">info@nemahminallah.com</a>
+                        <a href="contact.html" id="contactForm">Contact Form</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p id="copyrightText">&copy; 2023 Nemah Min Allah. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Expanded translations object for contact page
+        const translations = {
+            en: {
+                // Navigation
+                siteTitle: "Nemah Min Allah",
+                navHome: "Home",
+                navAbout: "About",
+                navChapters: "Chapters",
+                navContact: "Contact",
+                language: "English",
+                
+                // Page Hero
+                contactHeroTitle: "Contact Us",
+                contactHeroSubtitle: "Get in touch with us for any inquiries or feedback",
+                
+                // Contact Form Section
+                contactFormTitle: "Send Us a Message",
+                firstNameLabel: "First Name",
+                lastNameLabel: "Last Name",
+                emailLabel: "Email Address",
+                subjectLabel: "Subject",
+                messageLabel: "Message",
+                submitBtn: "Send Message",
+                
+                // Contact Info Section
+                contactInfoTitle: "Get In Touch",
+                addressTitle: "Address",
+                addressText: "Dubai, United Arab Emirates",
+                emailTitle: "Email",
+                emailText: "info@nemahminallah.com",
+                phoneTitle: "Phone",
+                phoneText: "+971 50 123 4567",
+                
+                // FAQ Section
+                faqTitle: "Frequently Asked Questions",
+                faqQuestion1: "How can I purchase the book?",
+                faqAnswer1: "You can purchase 'Nemah Min Allah' from major bookstores across the UAE or through our online retailers. Both paperback and e-book formats are available.",
+                faqQuestion2: "Is the book available in other languages?",
+                faqAnswer2: "Currently, 'Nemah Min Allah' is available in both English and Arabic. We are working on translations to other languages in the near future.",
+                faqQuestion3: "Can I request a signed copy?",
+                faqAnswer3: "Yes, signed copies are available for special orders. Please contact us directly for more information about obtaining a signed copy.",
+                faqQuestion4: "Are there any upcoming events or book signings?",
+                faqAnswer4: "We regularly host events and book signings. Please check our website or social media channels for updates on upcoming events.",
+                
+                // Footer
+                footerTitle: "Nemah Min Allah",
+                footerDesc: "A journey of faith, hope, and divine blessings that illuminates the path to inner peace.",
+                linksTitle: "Quick Links",
+                linkHome: "Home",
+                linkAbout: "About",
+                linkChapters: "Chapters",
+                linkContact: "Contact",
+                contactTitle: "Contact",
+                contactEmail: "info@nemahminallah.com",
+                contactForm: "Contact Form",
+                copyrightText: "© 2023 Nemah Min Allah. All rights reserved."
+            },
+            ar: {
+                // Navigation
+                siteTitle: "نعمة من الله",
+                navHome: "الرئيسية",
+                navAbout: "عن الكتاب",
+                navChapters: "الفصول",
+                navContact: "اتصل بنا",
+                language: "العربية",
+                
+                // Page Hero
+                contactHeroTitle: "اتصل بنا",
+                contactHeroSubtitle: "تواصل معنا لأي استفسارات أو ملاحظات",
+                
+                // Contact Form Section
+                contactFormTitle: "أرسل لنا رسالة",
+                firstNameLabel: "الاسم الأول",
+                lastNameLabel: "اسم العائلة",
+                emailLabel: "البريد الإلكتروني",
+                subjectLabel: "الموضوع",
+                messageLabel: "الرسالة",
+                submitBtn: "إرسال الرسالة",
+                
+                // Contact Info Section
+                contactInfoTitle: "تواصل معنا",
+                addressTitle: "العنوان",
+                addressText: "دبي، الإمارات العربية المتحدة",
+                emailTitle: "البريد الإلكتروني",
+                emailText: "info@nemahminallah.com",
+                phoneTitle: "الهاتف",
+                phoneText: "٩٧١ ٥٠ ١٢٣ ٤٥٦٧+",
+                
+                // FAQ Section
+                faqTitle: "الأسئلة الشائعة",
+                faqQuestion1: "كيف يمكنني شراء الكتاب؟",
+                faqAnswer1: "يمكنك شراء 'نعمة من الله' من المكتبات الكبرى في جميع أنحاء الإمارات أو من خلال تجار التجزئة عبر الإنترنت. النسخة المطبوعة والإلكترونية متوفرة.",
+                faqQuestion2: "هل الكتاب متوفر بلغات أخرى؟",
+                faqAnswer2: "حاليًا، 'نعمة من الله' متوفر باللغتين الإنجليزية والعربية. نحن نعمل على ترجمته إلى لغات أخرى في المستقبل القريب.",
+                faqQuestion3: "هل يمكنني طلب نسخة موقعة؟",
+                faqAnswer3: "نعم، النسخ الموقعة متاحة للطلبات الخاصة. يرجى الاتصال بنا مباشرة لمزيد من المعلومات حول الحصول على نسخة موقعة.",
+                faqQuestion4: "هل هناك أي فعاليات أو توقيع كتب قادمة؟",
+                faqAnswer4: "نحن ننظم بانتظام فعاليات وتوقيع كتب. يرجى التحقق من موقعنا الإلكتروني أو قنوات التواصل الاجتماعي للحصول على تحديثات حول الفعاليات القادمة.",
+                
+                // Footer
+                footerTitle: "نعمة من الله",
+                footerDesc: "رحلة إيمان وأمل وبركات إلهية تنير طريق السلام الداخلي.",
+                linksTitle: "روابط سريعة",
+                linkHome: "الرئيسية",
+                linkAbout: "عن الكتاب",
+                linkChapters: "الفصول",
+                linkContact: "اتصل بنا",
+                contactTitle: "اتصل بنا",
+                contactEmail: "info@nemahminallah.com",
+                contactForm: "نموذج الاتصال",
+                copyrightText: "© 2023 نعمة من الله. جميع الحقوق محفوظة."
+            }
+        };
+
+        // Current language
+        let currentLang = 'en';
+
+        // DOM Elements for contact page
+        const textElements = {
+            // Navigation Elements
+            siteTitle: document.getElementById('siteTitle'),
+            navHome: document.getElementById('navHome'),
+            navAbout: document.getElementById('navAbout'),
+            navChapters: document.getElementById('navChapters'),
+            navContact: document.getElementById('navContact'),
+            languageText: document.getElementById('languageText'),
+            languageTextMobile: document.getElementById('languageTextMobile'),
+            
+            // Page Hero
+            contactHeroTitle: document.getElementById('contactHeroTitle'),
+            contactHeroSubtitle: document.getElementById('contactHeroSubtitle'),
+            
+            // Contact Form Section
+            contactFormTitle: document.getElementById('contactFormTitle'),
+            firstNameLabel: document.getElementById('firstNameLabel'),
+            lastNameLabel: document.getElementById('lastNameLabel'),
+            emailLabel: document.getElementById('emailLabel'),
+            subjectLabel: document.getElementById('subjectLabel'),
+            messageLabel: document.getElementById('messageLabel'),
+            submitBtn: document.getElementById('submitBtn'),
+            
+            // Contact Info Section
+            contactInfoTitle: document.getElementById('contactInfoTitle'),
+            addressTitle: document.getElementById('addressTitle'),
+            addressText: document.getElementById('addressText'),
+            emailTitle: document.getElementById('emailTitle'),
+            emailText: document.getElementById('emailText'),
+            phoneTitle: document.getElementById('phoneTitle'),
+            phoneText: document.getElementById('phoneText'),
+            
+            // FAQ Section
+            faqTitle: document.getElementById('faqTitle'),
+            faqQuestion1: document.getElementById('faqQuestion1'),
+            faqAnswer1: document.getElementById('faqAnswer1'),
+            faqQuestion2: document.getElementById('faqQuestion2'),
+            faqAnswer2: document.getElementById('faqAnswer2'),
+            faqQuestion3: document.getElementById('faqQuestion3'),
+            faqAnswer3: document.getElementById('faqAnswer3'),
+            faqQuestion4: document.getElementById('faqQuestion4'),
+            faqAnswer4: document.getElementById('faqAnswer4'),
+            
+            // Footer
+            footerTitle: document.getElementById('footerTitle'),
+            footerDesc: document.getElementById('footerDesc'),
+            linksTitle: document.getElementById('linksTitle'),
+            linkHome: document.getElementById('linkHome'),
+            linkAbout: document.getElementById('linkAbout'),
+            linkChapters: document.getElementById('linkChapters'),
+            linkContact: document.getElementById('linkContact'),
+            contactTitle: document.getElementById('contactTitle'),
+            contactEmail: document.getElementById('contactEmail'),
+            contactForm: document.getElementById('contactForm'),
+            copyrightText: document.getElementById('copyrightText')
+        };
+
+        // Update page content based on current language
+        function updatePageContent() {
+            // Update all text elements
+            for (const [key, element] of Object.entries(textElements)) {
+                if (element) {
+                    element.textContent = translations[currentLang][key];
+                    
+                    // Add/remove Arabic styling
+                    if (currentLang === 'ar') {
+                        element.classList.add('arabic-text');
+                    } else {
+                        element.classList.remove('arabic-text');
+                    }
+                }
+            }
+            
+            // Update button text
+            const newLabel = currentLang === 'en' ? 'English' : 'العربية';
+            const iconHtml = `<i class="fas fa-language"></i> ${newLabel}`;
+            
+            if (window.langToggle) window.langToggle.innerHTML = iconHtml;
+            if (window.langToggleMobile) window.langToggleMobile.innerHTML = iconHtml;
+            
+            // Update direction of the page
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            document.documentElement.lang = currentLang;
+        }
+
+        // Toggle language function
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            updatePageContent();
+            
+            // Save preference to localStorage
+            localStorage.setItem('preferredLanguage', currentLang);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Grab both language toggle buttons
+            window.langToggle = document.getElementById('langToggle'); // desktop
+            window.langToggleMobile = document.getElementById('langToggleMobile'); // mobile
+
+            // Check for saved language preference
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang) {
+                currentLang = savedLang;
+            }
+            
+            updatePageContent();
+            
+            // Add event listeners to BOTH buttons
+            if (window.langToggle) window.langToggle.addEventListener('click', toggleLanguage);
+            if (window.langToggleMobile) window.langToggleMobile.addEventListener('click', toggleLanguage);
+            
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    document.querySelector('.navbar').classList.add('scrolled');
+                } else {
+                    document.querySelector('.navbar').classList.remove('scrolled');
+                }
+            });
+
+            // Contact form submission
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Here you would typically send the form data to a server
+                alert(currentLang === 'en' ? 'Thank you for your message! We will get back to you soon.' : 'شكرًا لك على رسالتك! سنعود إليك قريبًا.');
+                this.reset();
+            });
+            
+            // Contact form validation and submission
+            function initContactForm() {
+                const contactForm = document.getElementById('contactForm');
+                
+                if (contactForm) {
+                    // Real-time validation
+                    const inputs = contactForm.querySelectorAll('input, textarea');
+                    inputs.forEach(input => {
+                        input.addEventListener('blur', function() {
+                            validateField(this);
+                        });
+                        
+                        input.addEventListener('input', function() {
+                            if (this.classList.contains('is-invalid')) {
+                                validateField(this);
+                            }
+                        });
+                    });
+
+                    // Form submission
+                    contactForm.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        
+                        let isValid = true;
+                        inputs.forEach(input => {
+                            if (!validateField(input)) {
+                                isValid = false;
+                            }
+                        });
+                        
+                        if (isValid) {
+                            submitForm(this);
+                        }
+                    });
+                }
+            }
+
+            // Validate individual field
+            function validateField(field) {
+                const value = field.value.trim();
+                let isValid = true;
+                
+                // Remove previous validation classes
+                field.classList.remove('is-valid', 'is-invalid');
+                
+                // Check required fields
+                if (field.hasAttribute('required') && value === '') {
+                    field.classList.add('is-invalid');
+                    isValid = false;
+                }
+                // Email validation
+                else if (field.type === 'email' && value !== '') {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(value)) {
+                        field.classList.add('is-invalid');
+                        isValid = false;
+                    }
+                }
+                
+                // If valid, add valid class
+                if (isValid && value !== '') {
+                    field.classList.add('is-valid');
+                }
+                
+                return isValid;
+            }
+
+            // Submit form (simulate - replace with actual AJAX call)
+            function submitForm(form) {
+                const formData = new FormData(form);
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                
+                // Show loading state
+                submitBtn.innerHTML = currentLang === 'en' ? 
+                    '<i class="fas fa-spinner fa-spin"></i> Sending...' : 
+                    '<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...';
+                submitBtn.disabled = true;
+                
+                // Simulate API call
+                setTimeout(() => {
+                    // Show success message
+                    showAlert(
+                        currentLang === 'en' ? 
+                        'Thank you for your message! We will get back to you soon.' : 
+                        'شكرًا لك على رسالتك! سنعود إليك قريبًا.',
+                        'success'
+                    );
+                    
+                    // Reset form
+                    form.reset();
+                    
+                    // Remove validation classes
+                    form.querySelectorAll('.is-valid, .is-invalid').forEach(el => {
+                        el.classList.remove('is-valid', 'is-invalid');
+                    });
+                    
+                    // Reset button
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, 2000);
+            }
+
+            // Show alert message
+            function showAlert(message, type) {
+                // Remove existing alerts
+                const existingAlert = document.querySelector('.alert');
+                if (existingAlert) {
+                    existingAlert.remove();
+                }
+                
+                const alertDiv = document.createElement('div');
+                alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
+                alertDiv.innerHTML = `
+                    ${message}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                `;
+                
+                const contactForm = document.getElementById('contactForm');
+                contactForm.parentNode.insertBefore(alertDiv, contactForm.nextSibling);
+                
+                // Auto dismiss after 5 seconds
+                setTimeout(() => {
+                    if (alertDiv.parentNode) {
+                        alertDiv.remove();
+                    }
+                }, 5000);
+            }
+
+            // Initialize contact form when DOM is loaded
+            document.addEventListener('DOMContentLoaded', function() {
+                initContactForm();
+            });
+        });
+    </script>
+</body>
+</html>
