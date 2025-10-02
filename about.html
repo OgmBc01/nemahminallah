@@ -11,6 +11,80 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="resources/css/style.css">
+    <style>
+        /* Navbar brand logo circle */
+        .navbar-brand img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-right: 10px;
+        }
+
+        /* Mobile Accordion Styles */
+        .mobile-accordion-intro {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .horizontal-accordion {
+                display: none;
+            }
+            
+            .mobile-accordion-intro {
+                display: block;
+            }
+            
+            .mobile-accordion-item {
+                margin-bottom: 10px;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+            
+            .mobile-accordion-header {
+                padding: 15px;
+                background-color: #f8f9fa;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-weight: 500;
+            }
+            
+            .mobile-accordion-header h3 {
+                margin: 0;
+                font-size: 1.1rem;
+            }
+            
+            .mobile-accordion-content {
+                padding: 0 15px;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease, padding 0.3s ease;
+            }
+            
+            .mobile-accordion-item.active .mobile-accordion-content {
+                padding: 15px;
+                max-height: 500px;
+            }
+            
+            .mobile-accordion-icon {
+                transition: transform 0.3s ease;
+            }
+            
+            .mobile-accordion-item.active .mobile-accordion-icon {
+                transform: rotate(180deg);
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .horizontal-accordion {
+                display: flex;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -26,9 +100,12 @@
             </div>
 
             <!-- Brand -->
-            <a class="navbar-brand" href="index.html" id="siteTitle">Nemah Min Allah</a>
+            <a class="navbar-brand d-flex align-items-center" href="index.html" id="siteTitle">
+                <img src="resources/img/logo.png" alt="Nemah Min Allah Logo">
+                <span id="siteTitleText">Nemah Min Allah</span>
+            </a>
 
-            <!-- Toggler (HAMBURGER) - make sure this exists -->
+            <!-- Toggler (HAMBURGER) -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -38,7 +115,7 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item"><a class="nav-link" href="index.html" id="navHome">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html" id="navAbout">About</a></li>
+                <li class="nav-item"><a class="nav-link active" href="about.html" id="navAbout">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="chapters.html" id="navChapters">Chapters</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html" id="navContact">Contact</a></li>
 
@@ -55,29 +132,29 @@
     <!-- Page Hero Section -->
     <section class="page-hero">
         <div class="page-hero-content">
-            <h1 class="page-hero-title" data-i18n="aboutHeroTitle">About the Book</h1>
-            <p class="page-hero-subtitle" data-i18n="aboutHeroSubtitle">Discover the story behind Nemah Min Allah and its author</p>
+            <h1 class="page-hero-title" id="aboutHeroTitle">About the Book</h1>
+            <p class="page-hero-subtitle" id="aboutHeroSubtitle">Discover the story behind Nemah Min Allah and its author</p>
         </div>
     </section>
 
     <!-- About Author Section -->
     <section class="section about-author-section">
         <div class="container">
-            <h2 class="section-title" data-i18n="authorTitle">About the Author</h2>
+            <h2 class="section-title" id="authorTitle">About the Author</h2>
             <div class="row align-items-center">
                 <div class="col-md-4 text-center">
                     <img src="resources/img/author.jpg" alt="Author" class="author-image">
                 </div>
                 <div class="col-md-8">
-                    <h3 data-i18n="authorName">Zkryat Ibrahim Abkar Ali (ACCA)</h3>
-                    <p data-i18n="authorBio">Zkryat is a renowned spiritual teacher and author with over 20 years of experience in Islamic studies and spiritual guidance. His works focus on bridging traditional Islamic wisdom with contemporary life challenges.</p>
+                    <h3 id="authorName">Zkryat Ibrahim Abkar Ali (ACCA)</h3>
+                    <p id="authorBio">Zkryat holds a Bachelor of Science degree in Accounting and Finance from the University of Science and Technology, Sudan (First Class Honors), and a Master of Science degree in Accounting and Finance from the same university (First Class Honors).  She served as the Head of Department at Ibn Sina University and was a lecturer in the Accounting Department at Ibn Sina University, as well as a lecturer at the University of Science and Technology and several other universities.  She also worked as an auditor for an accounting firm and was a member of several committees, including the committee responsible for developing the Sudanese Fellowship program curriculum.  She has participated in and contributed to numerous international and local conferences and events.</p>
                     
-                    <h4 data-i18n="qualificationsTitle">Qualifications</h4>
+                    <h4 id="qualificationsTitle">Qualifications</h4>
                     <ul class="author-qualifications">
-                        <li data-i18n="qualification1">PhD in Islamic Studies from Al-Azhar University</li>
-                        <li data-i18n="qualification2">Master's in Comparative Religion from International Islamic University</li>
-                        <li data-i18n="qualification3">Over 15 published works on spirituality and personal development</li>
-                        <li data-i18n="qualification4">Regular speaker at international spiritual conferences</li>
+                        <li id="qualification1">PhD in Islamic Studies from Al-Azhar University</li>
+                        <li id="qualification2">Master's in Comparative Religion from International Islamic University</li>
+                        <li id="qualification3">Over 15 published works on spirituality and personal development</li>
+                        <li id="qualification4">Regular speaker at international spiritual conferences</li>
                     </ul>
                 </div>
             </div>
@@ -87,23 +164,25 @@
     <!-- Book Accordion Section -->
     <section class="section accordion-section">
         <div class="container">
-            <h2 class="section-title" data-i18n="bookOverviewTitle">Book Overview</h2>
+            <h2 class="section-title" id="bookOverviewTitle">Book Overview</h2>
+            
+            <!-- Original Horizontal Accordion (for desktop) -->
             <div class="horizontal-accordion">
                 <div class="accordion-item active">
                     <div class="accordion-bg" style="background-image: url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');"></div>
                     <div class="accordion-overlay">
                         <div class="accordion-content">
-                            <h3 class="accordion-title" data-i18n="introTitle">Introduction</h3>
-                            <p class="accordion-text" data-i18n="introText">Nemah Min Allah begins with an exploration of divine blessings in everyday life. The introduction sets the stage for a transformative journey, inviting readers to recognize the subtle ways grace manifests in our daily experiences.</p>
+                            <h3 class="accordion-title" id="introTitle">Introduction</h3>
+                            <p class="accordion-text" id="introText">Nemah Min Allah begins with an exploration of divine blessings in everyday life. The introduction sets the stage for a transformative journey, inviting readers to recognize the subtle ways grace manifests in our daily experiences.</p>
                         </div>
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <div class="accordion-bg" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="accordion-bg" style="background-image: url('resources/img/IMG_31.jpg');"></div>
                     <div class="accordion-overlay">
                         <div class="accordion-content">
-                            <h3 class="accordion-title" data-i18n="chapter1Title">Chapter 1: The Awakening</h3>
-                            <p class="accordion-text" data-i18n="chapter1Text">This chapter explores the initial moments of spiritual awakening, when one first becomes aware of the divine presence in their life. It discusses signs, experiences, and the emotional journey of this profound realization.</p>
+                            <h3 class="accordion-title" id="chapter1Title">Chapter 1: The Awakening</h3>
+                            <p class="accordion-text" id="chapter1Text">This chapter explores the initial moments of spiritual awakening, when one first becomes aware of the divine presence in their life. It discusses signs, experiences, and the emotional journey of this profound realization.</p>
                         </div>
                     </div>
                 </div>
@@ -111,18 +190,58 @@
                     <div class="accordion-bg" style="background-image: url('https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');"></div>
                     <div class="accordion-overlay">
                         <div class="accordion-content">
-                            <h3 class="accordion-title" data-i18n="chapter2Title">Chapter 2: The Journey</h3>
-                            <p class="accordion-text" data-i18n="chapter2Text">The second chapter delves into the ongoing spiritual journey, with its challenges, milestones, and moments of doubt and certainty. It provides guidance for maintaining faith through life's ups and downs.</p>
+                            <h3 class="accordion-title" id="chapter2Title">Chapter 2: The Journey</h3>
+                            <p class="accordion-text" id="chapter2Text">The second chapter delves into the ongoing spiritual journey, with its challenges, milestones, and moments of doubt and certainty. It provides guidance for maintaining faith through life's ups and downs.</p>
                         </div>
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <div class="accordion-bg" style="background-image: url('https://images.unsplash.com/photo-1543332164-6e82f355badc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="accordion-bg" style="background-image: url('resources/img/IMG_14.jpg');"></div>
                     <div class="accordion-overlay">
                         <div class="accordion-content">
-                            <h3 class="accordion-title" data-i18n="chapter3Title">Chapter 3: Divine Connection</h3>
-                            <p class="accordion-text" data-i18n="chapter3Text">The final chapter focuses on achieving a sustained connection with the divine. It explores practices, mindsets, and perspectives that help cultivate this relationship and recognize blessings in all circumstances.</p>
+                            <h3 class="accordion-title" id="chapter3Title">Chapter 3: Divine Connection</h3>
+                            <p class="accordion-text" id="chapter3Text">The final chapter focuses on achieving a sustained connection with the divine. It explores practices, mindsets, and perspectives that help cultivate this relationship and recognize blessings in all circumstances.</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Accordion (for small devices) -->
+            <div class="mobile-accordion-intro">
+                <div class="mobile-accordion-item active">
+                    <div class="mobile-accordion-header">
+                        <h3 id="mobileIntroTitle">Introduction</h3>
+                        <i class="fas fa-chevron-down mobile-accordion-icon"></i>
+                    </div>
+                    <div class="mobile-accordion-content">
+                        <p id="mobileIntroText">Nemah Min Allah begins with an exploration of divine blessings in everyday life. The introduction sets the stage for a transformative journey, inviting readers to recognize the subtle ways grace manifests in our daily experiences.</p>
+                    </div>
+                </div>
+                <div class="mobile-accordion-item">
+                    <div class="mobile-accordion-header">
+                        <h3 id="mobileChapter1Title">Chapter 1: The Awakening</h3>
+                        <i class="fas fa-chevron-down mobile-accordion-icon"></i>
+                    </div>
+                    <div class="mobile-accordion-content">
+                        <p id="mobileChapter1Text">This chapter explores the initial moments of spiritual awakening, when one first becomes aware of the divine presence in their life. It discusses signs, experiences, and the emotional journey of this profound realization.</p>
+                    </div>
+                </div>
+                <div class="mobile-accordion-item">
+                    <div class="mobile-accordion-header">
+                        <h3 id="mobileChapter2Title">Chapter 2: The Journey</h3>
+                        <i class="fas fa-chevron-down mobile-accordion-icon"></i>
+                    </div>
+                    <div class="mobile-accordion-content">
+                        <p id="mobileChapter2Text">The second chapter delves into the ongoing spiritual journey, with its challenges, milestones, and moments of doubt and certainty. It provides guidance for maintaining faith through life's ups and downs.</p>
+                    </div>
+                </div>
+                <div class="mobile-accordion-item">
+                    <div class="mobile-accordion-header">
+                        <h3 id="mobileChapter3Title">Chapter 3: Divine Connection</h3>
+                        <i class="fas fa-chevron-down mobile-accordion-icon"></i>
+                    </div>
+                    <div class="mobile-accordion-content">
+                        <p id="mobileChapter3Text">The final chapter focuses on achieving a sustained connection with the divine. It explores practices, mindsets, and perspectives that help cultivate this relationship and recognize blessings in all circumstances.</p>
                     </div>
                 </div>
             </div>
@@ -132,16 +251,16 @@
     <!-- Obtain Book Section -->
     <section class="section obtain-book-section">
         <div class="container">
-            <h2 class="section-title" data-i18n="obtainTitle">How to Obtain the Book</h2>
+            <h2 class="section-title" id="obtainTitle">How to Obtain the Book</h2>
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="store-card">
                         <div class="store-icon">
                             <i class="fas fa-store"></i>
                         </div>
-                        <h4 data-i18n="physicalStores">Physical Stores</h4>
-                        <p data-i18n="physicalStoresDesc">Find Nemah Min Allah at major bookstores across UAE. Check with your local bookstore for availability.</p>
-                        <button class="btn btn-light mt-3" data-i18n="findStores">Find Stores</button>
+                        <h4 id="physicalStores">Physical Stores</h4>
+                        <p id="physicalStoresDesc">Find Nemah Min Allah at major bookstores across UAE. Check with your local bookstore for availability.</p>
+                        <button class="btn btn-light mt-3" id="findStores">Find Stores</button>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
@@ -149,9 +268,9 @@
                         <div class="store-icon">
                             <i class="fas fa-shopping-cart"></i>
                         </div>
-                        <h4 data-i18n="onlineStores">Online Retailers</h4>
-                        <p data-i18n="onlineStoresDesc">Purchase the book from popular online retailers. Available in both paperback and e-book formats.</p>
-                        <button class="btn btn-light mt-3" data-i18n="shopOnline">Shop Online</button>
+                        <h4 id="onlineStores">Online Retailers</h4>
+                        <p id="onlineStoresDesc">Purchase the book from popular online retailers. Available in both paperback and e-book formats.</p>
+                        <button class="btn btn-light mt-3" id="shopOnline">Shop Online</button>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
@@ -159,9 +278,9 @@
                         <div class="store-icon">
                             <i class="fas fa-download"></i>
                         </div>
-                        <h4 data-i18n="directDownload">Direct Download</h4>
-                        <p data-i18n="directDownloadDesc">Get the digital version directly from our website. Instant access after purchase.</p>
-                        <button class="btn btn-light mt-3" data-i18n="downloadNow">Download Now</button>
+                        <h4 id="directDownload">Direct Download</h4>
+                        <p id="directDownloadDesc">Get the digital version directly from our website. Instant access after purchase.</p>
+                        <button class="btn btn-light mt-3" id="downloadNow">Download Now</button>
                     </div>
                 </div>
             </div>
@@ -173,8 +292,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-4">
-                    <h4 class="footer-title" data-i18n="footerTitle">Nemah Min Allah</h4>
-                    <p data-i18n="footerDesc">A journey of faith, hope, and divine blessings that illuminates the path to inner peace.</p>
+                    <h4 class="footer-title" id="footerTitle">Nemah Min Allah</h4>
+                    <p id="footerDesc">A journey of faith, hope, and divine blessings that illuminates the path to inner peace.</p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -182,24 +301,24 @@
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <h4 class="footer-title" data-i18n="linksTitle">Quick Links</h4>
+                    <h4 class="footer-title" id="linksTitle">Quick Links</h4>
                     <div class="footer-links">
-                        <a href="index.html" data-i18n="linkHome">Home</a>
-                        <a href="about.html" data-i18n="linkAbout">About</a>
-                        <a href="chapters.html" data-i18n="linkChapters">Chapters</a>
-                        <a href="contact.html" data-i18n="linkContact">Contact</a>
+                        <a href="index.html" id="linkHome">Home</a>
+                        <a href="about.html" id="linkAbout">About</a>
+                        <a href="chapters.html" id="linkChapters">Chapters</a>
+                        <a href="contact.html" id="linkContact">Contact</a>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <h4 class="footer-title" data-i18n="contactTitle">Contact</h4>
+                    <h4 class="footer-title" id="contactTitle">Contact</h4>
                     <div class="footer-links">
-                        <a href="mailto:info@nemahminallah.com" data-i18n="contactEmail">info@nemahminallah.com</a>
-                        <a href="contact.html" data-i18n="contactForm">Contact Form</a>
+                        <a href="mailto:info@nemahminallah.com" id="contactEmail">info@nemahminallah.com</a>
+                        <a href="contact.html" id="contactForm">Contact Form</a>
                     </div>
                 </div>
             </div>
             <div class="copyright">
-                <p data-i18n="copyrightText">&copy; 2023 Nemah Min Allah. All rights reserved.</p>
+                <p id="copyrightText">&copy; 2023 Nemah Min Allah. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -211,13 +330,13 @@
         // Expanded translations object for about page
         const translations = {
             en: {
-                // Navigation
-                siteTitle: "Nemah Min Allah",
+                siteTitleText: "Nemah Min Allah",
                 navHome: "Home",
                 navAbout: "About",
                 navChapters: "Chapters",
                 navContact: "Contact",
                 language: "English",
+                languageTextMobile: "English",
                 
                 // Page Hero
                 aboutHeroTitle: "About the Book",
@@ -243,6 +362,16 @@
                 chapter2Text: "The second chapter delves into the ongoing spiritual journey, with its challenges, milestones, and moments of doubt and certainty. It provides guidance for maintaining faith through life's ups and downs.",
                 chapter3Title: "Chapter 3: Divine Connection",
                 chapter3Text: "The final chapter focuses on achieving a sustained connection with the divine. It explores practices, mindsets, and perspectives that help cultivate this relationship and recognize blessings in all circumstances.",
+                
+                // Mobile Accordion
+                mobileIntroTitle: "Introduction",
+                mobileIntroText: "Nemah Min Allah begins with an exploration of divine blessings in everyday life. The introduction sets the stage for a transformative journey, inviting readers to recognize the subtle ways grace manifests in our daily experiences.",
+                mobileChapter1Title: "Chapter 1: The Awakening",
+                mobileChapter1Text: "This chapter explores the initial moments of spiritual awakening, when one first becomes aware of the divine presence in their life. It discusses signs, experiences, and the emotional journey of this profound realization.",
+                mobileChapter2Title: "Chapter 2: The Journey",
+                mobileChapter2Text: "The second chapter delves into the ongoing spiritual journey, with its challenges, milestones, and moments of doubt and certainty. It provides guidance for maintaining faith through life's ups and downs.",
+                mobileChapter3Title: "Chapter 3: Divine Connection",
+                mobileChapter3Text: "The final chapter focuses on achieving a sustained connection with the divine. It explores practices, mindsets, and perspectives that help cultivate this relationship and recognize blessings in all circumstances.",
                 
                 // Obtain Book Section
                 obtainTitle: "How to Obtain the Book",
@@ -270,13 +399,13 @@
                 copyrightText: "© 2023 Nemah Min Allah. All rights reserved."
             },
             ar: {
-                // Navigation
-                siteTitle: "نعمة من الله",
+                siteTitleText: "نعمة من الله",
                 navHome: "الرئيسية",
                 navAbout: "عن الكتاب",
                 navChapters: "الفصول",
                 navContact: "اتصل بنا",
                 language: "العربية",
+                languageTextMobile: "العربية",
                 
                 // Page Hero
                 aboutHeroTitle: "عن الكتاب",
@@ -302,6 +431,16 @@
                 chapter2Text: "يخوض الفصل الثاني في الرحلة الروحية المستمرة، مع تحدياتها ومعالمها ولحظات الشك واليقين. يوفر إرشادات للحفاظ على الإيمان خلال صعود وهبوط الحياة.",
                 chapter3Title: "الفصل 3: الاتصال الإلهي",
                 chapter3Text: "يركز الفصل الأخير على تحقيق اتصال مستدام مع الإلهي. يستكشف الممارسات والعقليات والمنظورات التي تساعد في تنمية هذه العلاقة والتعرف على البركات في جميع الظروف.",
+                
+                // Mobile Accordion
+                mobileIntroTitle: "المقدمة",
+                mobileIntroText: "تبدأ نعمة من الله باستكشاف البركات الإلهية في الحياة اليومية. تضع المقدمة المسرح لرحلة تحويلية، تدعو القراء للتعرف على الطرق الدقيقة التي تتجلى فيها النعمة في تجاربنا اليومية.",
+                mobileChapter1Title: "الفصل 1: الصحوة",
+                mobileChapter1Text: "يستكشف هذا الفصل اللحظات الأولى من الصحوة الروحية، عندما يصبح المرء لأول مرة على دراية بالوجود الإلهي في حياته. يناقش العلامات والتجارب والرحلة العاطفية لهذا الإدراك العميق.",
+                mobileChapter2Title: "الفصل 2: الرحلة",
+                mobileChapter2Text: "يخوض الفصل الثاني في الرحلة الروحية المستمرة، مع تحدياتها ومعالمها ولحظات الشك واليقين. يوفر إرشادات للحفاظ على الإيمان خلال صعود وهبوط الحياة.",
+                mobileChapter3Title: "الفصل 3: الاتصال الإلهي",
+                mobileChapter3Text: "يركز الفصل الأخير على تحقيق اتصال مستدام مع الإلهي. يستكشف الممارسات والعقليات والمنظورات التي تساعد في تنمية هذه العلاقة والتعرف على البركات في جميع الظروف.",
                 
                 // Obtain Book Section
                 obtainTitle: "كيفية الحصول على الكتاب",
@@ -330,74 +469,110 @@
             }
         };
 
-        // Current language
-        let currentLang = 'en';
+        let currentLang = localStorage.getItem('preferredLanguage') || 'en';
 
-        // Update page content based on current language
+        const textElements = {
+            siteTitleText: document.getElementById('siteTitleText'),
+            navHome: document.getElementById('navHome'),
+            navAbout: document.getElementById('navAbout'),
+            navChapters: document.getElementById('navChapters'),
+            navContact: document.getElementById('navContact'),
+            languageText: document.getElementById('languageText'),
+            languageTextMobile: document.getElementById('languageTextMobile'),
+            aboutHeroTitle: document.getElementById('aboutHeroTitle'),
+            aboutHeroSubtitle: document.getElementById('aboutHeroSubtitle'),
+            authorTitle: document.getElementById('authorTitle'),
+            authorName: document.getElementById('authorName'),
+            authorBio: document.getElementById('authorBio'),
+            qualificationsTitle: document.getElementById('qualificationsTitle'),
+            qualification1: document.getElementById('qualification1'),
+            qualification2: document.getElementById('qualification2'),
+            qualification3: document.getElementById('qualification3'),
+            qualification4: document.getElementById('qualification4'),
+            bookOverviewTitle: document.getElementById('bookOverviewTitle'),
+            introTitle: document.getElementById('introTitle'),
+            introText: document.getElementById('introText'),
+            chapter1Title: document.getElementById('chapter1Title'),
+            chapter1Text: document.getElementById('chapter1Text'),
+            chapter2Title: document.getElementById('chapter2Title'),
+            chapter2Text: document.getElementById('chapter2Text'),
+            chapter3Title: document.getElementById('chapter3Title'),
+            chapter3Text: document.getElementById('chapter3Text'),
+            mobileIntroTitle: document.getElementById('mobileIntroTitle'),
+            mobileIntroText: document.getElementById('mobileIntroText'),
+            mobileChapter1Title: document.getElementById('mobileChapter1Title'),
+            mobileChapter1Text: document.getElementById('mobileChapter1Text'),
+            mobileChapter2Title: document.getElementById('mobileChapter2Title'),
+            mobileChapter2Text: document.getElementById('mobileChapter2Text'),
+            mobileChapter3Title: document.getElementById('mobileChapter3Title'),
+            mobileChapter3Text: document.getElementById('mobileChapter3Text'),
+            obtainTitle: document.getElementById('obtainTitle'),
+            physicalStores: document.getElementById('physicalStores'),
+            physicalStoresDesc: document.getElementById('physicalStoresDesc'),
+            findStores: document.getElementById('findStores'),
+            onlineStores: document.getElementById('onlineStores'),
+            onlineStoresDesc: document.getElementById('onlineStoresDesc'),
+            shopOnline: document.getElementById('shopOnline'),
+            directDownload: document.getElementById('directDownload'),
+            directDownloadDesc: document.getElementById('directDownloadDesc'),
+            downloadNow: document.getElementById('downloadNow'),
+            footerTitle: document.getElementById('footerTitle'),
+            footerDesc: document.getElementById('footerDesc'),
+            linksTitle: document.getElementById('linksTitle'),
+            linkHome: document.getElementById('linkHome'),
+            linkAbout: document.getElementById('linkAbout'),
+            linkChapters: document.getElementById('linkChapters'),
+            linkContact: document.getElementById('linkContact'),
+            contactTitle: document.getElementById('contactTitle'),
+            contactEmail: document.getElementById('contactEmail'),
+            contactForm: document.getElementById('contactForm'),
+            copyrightText: document.getElementById('copyrightText')
+        };
+
         function updatePageContent() {
-            const elements = document.querySelectorAll('[data-i18n]');
-
-            elements.forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                if (translations[currentLang][key]) {
+            for (const [key, element] of Object.entries(textElements)) {
+                if (element) {
                     element.textContent = translations[currentLang][key];
-
-                    // Handle RTL for Arabic
                     if (currentLang === 'ar') {
                         element.classList.add('arabic-text');
-                        if (element.tagName === 'HTML') {
-                            element.dir = 'rtl';
-                        }
                     } else {
                         element.classList.remove('arabic-text');
-                        if (element.tagName === 'HTML') {
-                            element.dir = 'ltr';
-                        }
                     }
                 }
-            });
-
-            // Update page direction
-            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-            document.documentElement.lang = currentLang;
-
-            // Update BOTH language toggle buttons
+            }
             const newLabel = currentLang === 'en' ? 'English' : 'العربية';
             const iconHtml = `<i class="fas fa-language"></i> ${newLabel}`;
-
-            if (window.langToggle) langToggle.innerHTML = iconHtml;
-            if (window.langToggleMobile) langToggleMobile.innerHTML = iconHtml;
+            if (window.langToggle) window.langToggle.innerHTML = iconHtml;
+            if (window.langToggleMobile) window.langToggleMobile.innerHTML = iconHtml;
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            document.documentElement.lang = currentLang;
         }
 
-        // Toggle language function
         function toggleLanguage() {
             currentLang = currentLang === 'en' ? 'ar' : 'en';
             updatePageContent();
-
-            // Save preference to localStorage
             localStorage.setItem('preferredLanguage', currentLang);
         }
 
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function () {
-            // Grab both language toggle buttons
-            window.langToggle = document.getElementById('langToggle'); // desktop
-            window.langToggleMobile = document.getElementById('langToggleMobile'); // mobile
-
-            // Check for saved language preference
-            const savedLang = localStorage.getItem('preferredLanguage');
-            if (savedLang) {
-                currentLang = savedLang;
+        function moveLanguageToggle() {
+            const langToggleElement = document.querySelector('.lang-container');
+            const navbarContainer = document.querySelector('.navbar .container');
+            if (langToggleElement && navbarContainer) {
+                if (currentLang === 'ar') {
+                    navbarContainer.appendChild(langToggleElement);
+                } else {
+                    navbarContainer.insertBefore(langToggleElement, navbarContainer.firstChild);
+                }
             }
+        }
 
-            // Initial content update
+        document.addEventListener('DOMContentLoaded', function () {
+            window.langToggle = document.getElementById('langToggle');
+            window.langToggleMobile = document.getElementById('langToggleMobile');
             updatePageContent();
-
-            // Add event listeners to BOTH buttons
             if (langToggle) langToggle.addEventListener('click', toggleLanguage);
             if (langToggleMobile) langToggleMobile.addEventListener('click', toggleLanguage);
 
-            // Navbar scroll effect
             window.addEventListener('scroll', function () {
                 if (window.scrollY > 50) {
                     document.querySelector('.navbar').classList.add('scrolled');
@@ -406,18 +581,32 @@
                 }
             });
 
-            // Horizontal accordion functionality
+            // Original horizontal accordion functionality
             const accordionItems = document.querySelectorAll('.accordion-item');
             accordionItems.forEach(item => {
                 item.addEventListener('click', function () {
-                    // Remove active class from all items
                     accordionItems.forEach(i => i.classList.remove('active'));
-                    // Add active class to clicked item
                     this.classList.add('active');
                 });
             });
-        });
 
+            // Mobile accordion functionality
+            const mobileAccordionItems = document.querySelectorAll('.mobile-accordion-item');
+            mobileAccordionItems.forEach(item => {
+                const header = item.querySelector('.mobile-accordion-header');
+                header.addEventListener('click', function () {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all items
+                    mobileAccordionItems.forEach(i => i.classList.remove('active'));
+                    
+                    // If the clicked item wasn't active, open it
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>

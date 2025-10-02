@@ -11,22 +11,63 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="resources/css/style.css">
+    <style>
+       
+    </style>
 </head>
 <body>
 
+    <!-- Daily Reminder Modal -->
+    <div class="modal fade reminder-modal" id="dailyReminderModal" tabindex="-1" aria-labelledby="dailyReminderLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="floral-bg"></div>
+                <div class="modal-header">
+                    <h5 class="modal-title reminder-title" id="dailyReminderLabel">تذكير يومي</h5>
+                    <button type="button" class="btn-close-custom" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="reminder-icon">
+                        <i class="fas fa-pray"></i>
+                    </div>
+                    <div class="reminder-content" id="reminderContent">
+                    شكرت الله اليوم ؟ 🤍
+                    الحمد الله رب العالمين
+                    استغفرالله العظيم واتوب إليه
+                    اللهم صل وسلم على سيدنا محمد وعلى آله وصحبه وسلم
+                    لا إله إلا أنت سبحانك إني كنت من الظالمين
+                    رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا
+                    رَبِّ اغْفِرْ لِي وَهَبْ لِي مُلْكًا لَا يَنْبَغِي لِأَحَدٍ مِنْ بَعْدِي ۖ إِنَّكَ أَنْتَ الْوَهَّابُ
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success btn-lg" data-bs-dismiss="modal" id="closeReminderBtn">
+                        <i class="fas fa-check me-2"></i>
+                        <span id="closeReminderText">المتابعة إلى الموقع</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Navigation Menu -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-    <div class="container d-flex align-items-center">
+        <div class="container d-flex align-items-center">
 
-        <!-- Desktop language (shows on lg and up) -->
-        <div class="lang-container d-none d-lg-block">
-        <button id="langToggle" class="lang-btn">
-            <i class="fas fa-language"></i> <span id="languageText">English</span>
-        </button>
-        </div>
+            <!-- Desktop language (shows on lg and up) -->
+            <div class="lang-container d-none d-lg-block">
+                <button id="langToggle" class="lang-btn">
+                    <i class="fas fa-language"></i> <span id="languageText">English</span>
+                </button>
+            </div>
 
-        <!-- Brand -->
-        <a class="navbar-brand" href="index.html" id="siteTitle">Nemah Min Allah</a>
+            <!-- Brand -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html" id="siteTitle">
+                <img src="resources/img/logo.png" alt="Nemah Min Allah Logo" style="margin-right:10px;">
+                <span id="siteTitleText">Nemah Min Allah</span>
+            </a>
 
         <!-- Toggler (HAMBURGER) - make sure this exists -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -56,9 +97,9 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-slider">
-            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+            <div class="slide active" style="background-image: url('resources/img/hero-1.png');"></div>
+            <div class="slide" style="background-image: url('resources/img/IMG_31.jpg');"></div>
+            <div class="slide" style="background-image: url('resources/img/hero-3.png');"></div>
             <div class="slide-overlay"></div>
         </div>
         
@@ -75,7 +116,7 @@
             <h2 class="section-title" id="aboutTitle">About the Book</h2>
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Book Cover" class="img-fluid book-cover">
+                    <img src="resources/img/IMG_31.jpg" alt="Book Cover" class="img-fluid book-cover">
                 </div>
                 <div class="col-md-6">
                     <h3 id="bookTitle">Nemah Min Allah</h3>
@@ -193,13 +234,24 @@
         // Language Data
         const translations = {
             en: {
-                // Navigation
-                siteTitle: "Nemah Min Allah",
+                // Navigation - Fixed: using siteTitleText consistently
+                siteTitleText: "Nemah Min Allah",
                 navHome: "Home",
                 navAbout: "About",
                 navChapters: "Chapters",
                 navContact: "Contact",
                 language: "English",
+
+                // Modal Content (Arabic only - these won't be used)
+                reminderTitle: "تذكير يومي",
+                reminderContent: `شكرت الله اليوم ؟ 🤍
+الحمد الله رب العالمين
+استغفرالله العظيم واتوب إليه
+اللهم صل وسلم على سيدنا محمد وعلى آله وصحبه وسلم
+لا إله إلا أنت سبحانك إني كنت من الظالمين
+رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا
+رَبِّ اغْفِرْ لِي وَهَبْ لِي مُلْكًا لَا يَنْبَغِي لِأَحَدٍ مِنْ بَعْدِي ۖ إِنَّكَ أَنْتَ الْوَهَّابُ`,
+                closeReminderText: "المتابعة إلى الموقع",
 
                 // Hero Section
                 heroTitle: "Nemah Min Allah",
@@ -242,13 +294,24 @@
                 copyrightText: "© 2023 Nemah Min Allah. All rights reserved."
             },
             ar: {
-                // Navigation
-                siteTitle: "نعمة من الله",
+                // Navigation - Fixed: using siteTitleText consistently
+                siteTitleText: "نعمة من الله",
                 navHome: "الرئيسية",
                 navAbout: "عن الكتاب",
                 navChapters: "الفصول",
                 navContact: "اتصل بنا",
                 language: "العربية",
+
+                // Modal Content (Arabic only)
+                reminderTitle: "تذكير يومي",
+                reminderContent: `شكرت الله اليوم ؟ 🤍
+الحمد الله رب العالمين
+استغفرالله العظيم واتوب إليه
+اللهم صل وسلم على سيدنا محمد وعلى آله وصحبه وسلم
+لا إله إلا أنت سبحانك إني كنت من الظالمين
+رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا
+رَبِّ اغْفِرْ لِي وَهَبْ لِي مُلْكًا لَا يَنْبَغِي لِأَحَدٍ مِنْ بَعْدِي ۖ إِنَّكَ أَنْتَ الْوَهَّابُ`,
+                closeReminderText: "المتابعة إلى الموقع",
 
                 // Hero Section
                 heroTitle: "نعمة من الله",
@@ -292,19 +355,25 @@
             }
         };
 
-        // Current language
-        let currentLang = 'en';
+        // Current language - Load from localStorage or default to English
+        let currentLang = localStorage.getItem('preferredLanguage') || 'en';
 
         // DOM Elements - Now including navigation elements
         const langToggle = document.getElementById('langToggle');
         const textElements = {
-            // Navigation Elements
-            siteTitle: document.getElementById('siteTitle'),
+            // Navigation Elements - Fixed: using siteTitleText consistently
+            siteTitleText: document.getElementById('siteTitleText'),
             navHome: document.getElementById('navHome'),
             navAbout: document.getElementById('navAbout'),
             navChapters: document.getElementById('navChapters'),
             navContact: document.getElementById('navContact'),
             languageText: document.getElementById('languageText'),
+            languageTextMobile: document.getElementById('languageTextMobile'),
+            
+            // Modal Elements (Arabic only - not translatable)
+            reminderTitle: document.getElementById('dailyReminderLabel'),
+            reminderContent: document.getElementById('reminderContent'),
+            closeReminderText: document.getElementById('closeReminderText'),
             
             // Hero Section
             heroTitle: document.getElementById('heroTitle'),
@@ -347,9 +416,12 @@
             copyrightText: document.getElementById('copyrightText')
         };
 
-       // Language Toggle Function
+        // Language Toggle Function
         function toggleLanguage() {
             currentLang = currentLang === 'en' ? 'ar' : 'en';
+
+            // Save preference to localStorage immediately
+            localStorage.setItem('preferredLanguage', currentLang);
 
             // Update BOTH language buttons
             const newLabel = currentLang === 'en' ? 'English' : 'العربية';
@@ -358,10 +430,12 @@
             if (langToggle) langToggle.innerHTML = iconHtml;
             if (langToggleMobile) langToggleMobile.innerHTML = iconHtml;
 
-            // Update all text elements
+            // Update all text elements (except modal which is Arabic only)
             for (const [key, element] of Object.entries(textElements)) {
-                if (element) {
-                    element.textContent = translations[currentLang][key];
+                if (element && !key.includes('reminder')) { // Skip modal elements
+                    if (translations[currentLang][key]) {
+                        element.textContent = translations[currentLang][key];
+                    }
 
                     // Add/remove Arabic styling
                     if (currentLang === 'ar') {
@@ -374,13 +448,13 @@
 
             // Update direction of the page
             document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            document.documentElement.lang = currentLang;
 
             // Move language toggle position based on language
             moveLanguageToggle();
         }
 
         // Move language toggle to correct position (desktop only)
-        // NOTE: mobile toggle is always inside menu as last item
         function moveLanguageToggle() {
             const langToggleElement = document.querySelector('.lang-container');
             const navbarContainer = document.querySelector('.navbar .container');
@@ -396,13 +470,40 @@
             }
         }
 
+        // Daily Reminder Modal Logic
+        function checkAndShowReminder() {
+            const today = new Date().toDateString();
+            const lastShownDate = localStorage.getItem('reminderLastShown');
+            const visitCount = parseInt(localStorage.getItem('reminderVisitCount') || '0');
+            
+            // Show modal only for first two visits of the day
+            if (lastShownDate !== today || visitCount < 2) {
+                // Update visit tracking
+                if (lastShownDate !== today) {
+                    // New day, reset counter
+                    localStorage.setItem('reminderVisitCount', '1');
+                } else {
+                    // Same day, increment counter
+                    localStorage.setItem('reminderVisitCount', (visitCount + 1).toString());
+                }
+                
+                localStorage.setItem('reminderLastShown', today);
+                
+                // Show modal after a short delay
+                setTimeout(() => {
+                    const modal = new bootstrap.Modal(document.getElementById('dailyReminderModal'));
+                    modal.show();
+                }, 1000);
+            }
+        }
+
         // Initialize language
         document.addEventListener('DOMContentLoaded', function () {
             // Grab both toggle buttons
             window.langToggle = document.getElementById('langToggle');          // desktop
             window.langToggleMobile = document.getElementById('langToggleMobile'); // mobile
 
-            // Set initial language
+            // Set initial language based on saved preference
             updatePageContent();
 
             // Add event listeners to BOTH buttons
@@ -411,15 +512,19 @@
 
             // Initialize image slider
             initImageSlider();
-        });
 
+            // Check and show daily reminder
+            checkAndShowReminder();
+        });
 
         // Update page content based on current language
         function updatePageContent() {
-            // Update all text elements
+            // Update all text elements (except modal which is Arabic only)
             for (const [key, element] of Object.entries(textElements)) {
-                if (element) {
-                    element.textContent = translations[currentLang][key];
+                if (element && !key.includes('reminder')) { // Skip modal elements
+                    if (translations[currentLang][key]) {
+                        element.textContent = translations[currentLang][key];
+                    }
                     
                     // Add/remove Arabic styling
                     if (currentLang === 'ar') {
@@ -435,6 +540,7 @@
             
             // Update direction of the page
             document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            document.documentElement.lang = currentLang;
             
             // Move language toggle to correct position
             moveLanguageToggle();

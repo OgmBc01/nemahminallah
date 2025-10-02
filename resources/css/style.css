@@ -171,6 +171,13 @@ h1, h2, h3, h4, h5 {
   order: 4; /* still last */
 }
 
+.navbar-brand img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
 
 /* ===== HERO SECTION STYLES (HOMEPAGE) ===== */
 .hero-section {
@@ -320,6 +327,105 @@ h1, h2, h3, h4, h5 {
     height: 3px;
     background: var(--accent-color);
     margin: 15px auto;
+}
+
+ /* Daily Reminder Modal Styles */
+.reminder-modal .modal-content {
+    background: linear-gradient(135deg, #e8f5e9 0%, #4caf50 100%);
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+.reminder-modal .modal-header {
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px 20px 0 0;
+    padding: 20px 30px;
+}
+.reminder-modal .modal-body {
+    padding: 40px 30px;
+    text-align: center;
+    background: rgba(255,255,255,0.95);
+    margin: 0 10px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.reminder-modal .modal-footer {
+    border-top: 2px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 0 0 20px 20px;
+    padding: 20px 30px;
+}
+.reminder-title {
+    color: var(--dark-green);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 0;
+}
+.reminder-content {
+    font-family: 'Amiri', serif;
+    font-size: 1.4rem;
+    line-height: 2.2;
+    color: var(--dark-green);
+    direction: rtl;
+    text-align: center;
+    white-space: pre-line;
+}
+.floral-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><path fill="%232e7d32" d="M50,20 A30,30 0 1,1 50,80 A30,30 0 1,1 50,20 Z" transform="rotate(30,50,50)"/><circle cx="50" cy="50" r="15" fill="%234caf50"/></svg>');
+    background-size: 200px;
+    opacity: 0.3;
+    z-index: -1;
+}
+.btn-close-custom {
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--dark-green);
+    color: var(--dark-green);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+.btn-close-custom:hover {
+    background: var(--dark-green);
+    color: white;
+    transform: rotate(90deg);
+}
+.reminder-icon {
+    font-size: 3rem;
+    color: var(--medium-green);
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+/* Navbar brand logo circle */
+.navbar-brand img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+/* Ensure brand text is always visible */
+.navbar-brand span {
+    display: inline !important;
+    visibility: visible !important;
 }
 
 /* ===== ABOUT SECTION STYLES (HOMEPAGE) ===== */
@@ -473,6 +579,66 @@ h1, h2, h3, h4, h5 {
 .accordion-text {
     font-size: 0.9rem;
     line-height: 1.6;
+}
+
+/* Book Accordion Section - Mobile Fix */
+ /* Mobile Accordion Styles */
+@media (max-width: 768px) {
+    .horizontal-accordion {
+        display: none;
+    }
+    
+    .mobile-accordion {
+        display: block;
+    }
+    
+    .mobile-accordion-item {
+        margin-bottom: 10px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .mobile-accordion-header {
+        padding: 15px;
+        background-color: #f8f9fa;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 500;
+    }
+    
+    .mobile-accordion-header h3 {
+        margin: 0;
+        font-size: 1.1rem;
+    }
+    
+    .mobile-accordion-content {
+        padding: 0 15px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    
+    .mobile-accordion-item.active .mobile-accordion-content {
+        padding: 15px;
+        max-height: 500px;
+    }
+    
+    .mobile-accordion-icon {
+        transition: transform 0.3s ease;
+    }
+    
+    .mobile-accordion-item.active .mobile-accordion-icon {
+        transform: rotate(180deg);
+    }
+}
+
+@media (min-width: 769px) {
+    .mobile-accordion {
+        display: none;
+    }
 }
 
 /* ===== TESTIMONIALS STYLES (HOMEPAGE) ===== */
@@ -739,6 +905,7 @@ h1, h2, h3, h4, h5 {
 /* FAQ Section */
 .faq-section {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 10px;
 }
 
 .accordion-item {
