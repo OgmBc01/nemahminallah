@@ -27,101 +27,6 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="resources/css/style.css">
-    <style>
-        /* Navbar brand logo circle */
-        .navbar-brand img {
-            width: 40px;
-            height: 40px;
-            object-fit: cover;
-            border-radius: 50%;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            margin-right: 10px;
-        }
-
-        /* Mobile Accordion Styles */
-        .mobile-accordion-intro {
-            display: none;
-        }
-        
-        /* Additional Author Information Styles */
-        .participation-section, .contributions-section, .brief-section {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #eaeaea;
-        }
-        
-        .participation-list, .contributions-list, .brief-list {
-            columns: 2;
-            column-gap: 30px;
-        }
-        
-        .participation-list li, .contributions-list li, .brief-list li {
-            margin-bottom: 8px;
-            break-inside: avoid;
-        }
-        
-        @media (max-width: 768px) {
-            .participation-list, .contributions-list, .brief-list {
-                columns: 1;
-            }
-            
-            .horizontal-accordion {
-                display: none;
-            }
-            
-            .mobile-accordion-intro {
-                display: block;
-            }
-            
-            .mobile-accordion-item {
-                margin-bottom: 10px;
-                border-radius: 8px;
-                overflow: hidden;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            }
-            
-            .mobile-accordion-header {
-                padding: 15px;
-                background-color: #f8f9fa;
-                cursor: pointer;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                font-weight: 500;
-            }
-            
-            .mobile-accordion-header h3 {
-                margin: 0;
-                font-size: 1.1rem;
-            }
-            
-            .mobile-accordion-content {
-                padding: 0 15px;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.3s ease, padding 0.3s ease;
-            }
-            
-            .mobile-accordion-item.active .mobile-accordion-content {
-                padding: 15px;
-                max-height: 500px;
-            }
-            
-            .mobile-accordion-icon {
-                transition: transform 0.3s ease;
-            }
-            
-            .mobile-accordion-item.active .mobile-accordion-icon {
-                transform: rotate(180deg);
-            }
-        }
-        
-        @media (min-width: 769px) {
-            .horizontal-accordion {
-                display: flex;
-            }
-        }
-    </style>
 </head>
 <body>
 
@@ -166,6 +71,7 @@
             </div>
         </div>
     </nav>
+    
     <!-- Page Hero Section -->
     <section class="page-hero">
         <div class="page-hero-content">
@@ -188,24 +94,23 @@
                     
                     <h4 id="qualificationsTitle">Qualifications</h4>
                     <ul class="author-qualifications">
-                        <li id="qualification1">PhD in Islamic Studies from Al-Azhar University</li>
-                        <li id="qualification2">Master's in Comparative Religion from International Islamic University</li>
-                        <li id="qualification3">Over 15 published works on spirituality and personal development</li>
-                        <li id="qualification4">Regular speaker at international spiritual conferences</li>
+                        <li id="qualification1">Master's in Accounting and Finance, Sudan University of Science and Technology (First Class Honors)</li>
+                        <li id="qualification2">Bachelor's in Accounting and Finance, Sudan University of Science and Technology (First Class Honors)</li>
+                        <li id="qualification3">Student at the Association of Chartered Certified Accountants (ACCA)</li>
                     </ul>
+                    
+                    <!-- Work Experience Section -->
+                    <div class="work-experience-section">
+                        <h4 id="workExperienceTitle">Work Experience</h4>
+                        <ul class="work-experience-list" id="workExperienceList">
+                            <!-- Content will be populated by JavaScript -->
+                        </ul>
+                    </div>
                     
                     <!-- New Participation Section -->
                     <div class="participation-section">
                         <h4 id="participationTitle">Event Participation</h4>
                         <ul class="participation-list" id="participationList">
-                            <!-- Content will be populated by JavaScript -->
-                        </ul>
-                    </div>
-                    
-                    <!-- New Contributions Section -->
-                    <div class="contributions-section">
-                        <h4 id="contributionsTitle">Contributions</h4>
-                        <ul class="contributions-list" id="contributionsList">
                             <!-- Content will be populated by JavaScript -->
                         </ul>
                     </div>
@@ -409,14 +314,15 @@
                 authorName: "Zkryat Ibrahim Abkar Ali (ACCA)",
                 authorBio: "Zkryat holds a Bachelor of Science degree in Accounting and Finance from the University of Science and Technology, Sudan (First Class Honors), and a Master of Science degree in Accounting and Finance from the same university (First Class Honors).  She served as the Head of Department at Ibn Sina University and was a lecturer in the Accounting Department at Ibn Sina University, as well as a lecturer at the University of Science and Technology and several other universities.  She also worked as an auditor for an accounting firm and was a member of several committees, including the committee responsible for developing the Sudanese Fellowship program curriculum.  She has participated in and contributed to numerous international and local conferences and events.",
                 qualificationsTitle: "Qualifications",
-                qualification1: "PhD in Islamic Studies from Al-Azhar University",
-                qualification2: "Master's in Comparative Religion from International Islamic University",
-                qualification3: "Over 15 published works on spirituality and personal development",
-                qualification4: "Regular speaker at international spiritual conferences",
+                qualification1: "Master's in Accounting and Finance, Sudan University of Science and Technology (First Class Honors)",
+                qualification2: "Bachelor's in Accounting and Finance, Sudan University of Science and Technology (First Class Honors)",
+                qualification3: "Student at the Association of Chartered Certified Accountants (ACCA)",
+                
+                // Work Experience Section
+                workExperienceTitle: "Work Experience",
                 
                 // New Sections
                 participationTitle: "Event Participation",
-                contributionsTitle: "Contributions",
                 briefTitle: "Brief Overview",
                 
                 // Book Accordion Section
@@ -483,14 +389,15 @@
                 authorName: "زكريات ابراهيم ابكر علي",
                 authorBio: "زكريات ، حصلت على بكالوريوس المحاسبه والتمويل جامعة السودان للعلوم والتكنولوجيا ( درجة الاولي ) ، وايضا  حصلت علي ماجستير المحاسبة والتمويل من جامعة السودان للعلوم والتكنولوجيا ( درجة الاولي )  ، حصلت علي منصب رئيس القسم العام في جامعة ابن سينا وايضا محاضر في قسم المحاسبه جامعة ابن سينا ، وايضا محاضر في جامعة السودان للعلوم والتكنولوجيا ومجموعة من الجامعات ، و مراجع في مجموعة حاسبين ،وكانت عضو في مجموعة من الجان من ضمنها لجنة اعداد مقررات الزمالة السودانية ، وايضا شاركت و ساهمة  في مجموعة من الفعاليات و المهرجانات العالمية و المحلية",
                 qualificationsTitle: "المؤهلات",
-                qualification1: "دكتوراه في الدراسات الإسلامية من جامعة الأزهر",
-                qualification2: "ماجستير في الأديان المقارنة من الجامعة الإسلامية الدولية",
-                qualification3: "أكثر من 15 عمل منشور عن الروحانية والتطور الشخصي",
-                qualification4: "متحدث منتظم في المؤتمرات الروحية الدولية",
+                qualification1: "ماجستير في المحاسبة والمالية، جامعة السودان للعلوم والتكنولوجيا (بمرتبة الشرف الأولى)",
+                qualification2: "بكالوريوس في المحاسبة والمالية، جامعة السودان للعلوم والتكنولوجيا (بمرتبة الشرف الأولى)",
+                qualification3: "طالب في جمعية المحاسبين القانونيين المعتمدين (ACCA)",
+                
+                // Work Experience Section
+                workExperienceTitle: "الخبرة العملية",
                 
                 // New Sections
                 participationTitle: "تمت المشاركه في",
-                contributionsTitle: "المساهمات",
                 briefTitle: "نبذه مختصره",
                 
                 // Book Accordion Section
@@ -544,6 +451,14 @@
         // New content data
         const additionalContent = {
             en: {
+                workExperience: [
+                    "Accountant (RTMC) - current",
+                    "Accountant (MAM INVESTMENT)",
+                    "Auditor (Hasibeen Group)",
+                    "Lecturer (Sudan University of Science and Technology)",
+                    "Lecturer (Ibn Sina University)",
+                    "Regular speaker at international spiritual conferences"
+                ],
                 participation: [
                     "16th Fazaa International Athletics Championship for People of Determination - Dubai 2025",
                     "Al-Nasr Club match with Al-Orouba Club",
@@ -572,35 +487,26 @@
                     "Arabian Gulf League 2024-2025",
                     "Horse Riding Program for Children of Determination 2024-2025"
                 ],
-                contributions: [
-                    "Nemah Min Allah Book",
-                    "Honored as an outstanding female preacher",
-                    "Student at the Association of Chartered Certified Accountants (ACCA)",
-                    "Lecturer at Ibn Sina University (online)",
-                    "Lecturer at Nile University (online)",
-                    "Accountant at MAM Investment Company"
-                ],
                 brief: [
-                    "Bachelor's in Accounting and Finance, University of Science and Technology, Sudan (First Class Honors)",
-                    "Master's in Accounting and Finance, University of Science and Technology, Sudan (First Class Honors)",
                     "NGO Studies, University of Khartoum",
                     "Various courses in Accounting and Management",
-                    "Student at the Association of Chartered Certified Accountants (ACCA)",
                     "Author of 'Nemah Min Allah' book",
-                    "Auditor: Hasbeen Group",
-                    "Assistant Auditor: Hasbeen Group",
-                    "Accountant: MAM Investment Group (currently)",
-                    "Accountant: Wajhatak Company",
-                    "Lecturer: University of Science and Technology, Sudan",
                     "Teaching Assistant: University of Science and Technology, Sudan",
                     "Head of General Department: Ibn Sina University",
-                    "Lecturer: Ibn Sina University",
                     "Teaching Assistant: Ibn Sina University",
                     "Teacher: Oscar Institute",
                     "Member of various examination committees at the university"
                 ]
             },
             ar: {
+                workExperience: [
+                    "محاسب (RTMC) - حالياً",
+                    "محاسب (MAM INVESTMENT)",
+                    "مدقق حسابات (مجموعة حاسبين)",
+                    "محاضر (جامعة السودان للعلوم والتكنولوجيا)",
+                    "محاضر (جامعة ابن سينا)",
+                    "متحدث منتظم في المؤتمرات الروحية الدولية"
+                ],
                 participation: [
                     "بطولة فزاع الدولية السادسة عشرة لألعاب القوى لأصحاب الهمم – دبي 2025",
                     "مباراة نادي النصر مع نادي العروبة",
@@ -629,29 +535,12 @@
                     "دوري الخليج العربي 2024-2025",
                     "برنامج ركوب الخيل للأطفال من أصحاب الهمم 2024 – 2025"
                 ],
-                contributions: [
-                    "كتاب نعمة من الله",
-                    "تم التكريم كمطوعة متميزة",
-                    "طالبه في جمعية المحاسبين البريطانية",
-                    "محاضر في جامعة ابن سينا (online)",
-                    "محاضر في جامعة النيل (online)",
-                    "محاسب في شركة MAM Investment"
-                ],
                 brief: [
-                    "بكالريوس في المحاسبة والمالية، جامعة السودان للعلوم والتكنولوجيا (بمرتبة الشرف الأولى)",
-                    "ماجستير في المحاسبة والمالية، جامعة السودان للعلوم والتكنولوجيا (بمرتبة الشرف الأولى)",
                     "داراسة NGO جامعة الخرطوم",
                     "دورات متنوعة في المحاسبة والإدارة",
-                    "طالب في جمعية المحاسبين القانونيين المعتمدين (ACCA)",
                     "مؤلف كتاب 'نعمة من الله'",
-                    "مدقق حسابات: مجموعة حاسبين",
-                    "مساعد مدقق حسابات: مجموعة حاسبين",
-                    "محاسب: مجموعة مام للاستثمار (حاليا)",
-                    "محاسب: شركة واجهتك",
-                    "محاضر: جامعة السودان للعلوم والتكنولوجيا",
                     "مساعد تدريس: جامعة السودان للعلوم والتكنولوجيا",
                     "رئيس قسم عام: جامعة ابن سينا",
-                    "محاضر: جامعة ابن سينا",
                     "مساعد تدريس: جامعة ابن سينا",
                     "مدرس: معهد أوسكار",
                     "عضو في العديد من لجان الامتحانات في جامعة"
@@ -678,9 +567,8 @@
             qualification1: document.getElementById('qualification1'),
             qualification2: document.getElementById('qualification2'),
             qualification3: document.getElementById('qualification3'),
-            qualification4: document.getElementById('qualification4'),
+            workExperienceTitle: document.getElementById('workExperienceTitle'),
             participationTitle: document.getElementById('participationTitle'),
-            contributionsTitle: document.getElementById('contributionsTitle'),
             briefTitle: document.getElementById('briefTitle'),
             bookOverviewTitle: document.getElementById('bookOverviewTitle'),
             introTitle: document.getElementById('introTitle'),
@@ -746,6 +634,20 @@
         }
 
         function updateAdditionalContent() {
+            // Update work experience list
+            const workExperienceList = document.getElementById('workExperienceList');
+            if (workExperienceList) {
+                workExperienceList.innerHTML = '';
+                additionalContent[currentLang].workExperience.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = item;
+                    if (currentLang === 'ar') {
+                        li.classList.add('arabic-text');
+                    }
+                    workExperienceList.appendChild(li);
+                });
+            }
+            
             // Update participation list
             const participationList = document.getElementById('participationList');
             if (participationList) {
@@ -757,20 +659,6 @@
                         li.classList.add('arabic-text');
                     }
                     participationList.appendChild(li);
-                });
-            }
-            
-            // Update contributions list
-            const contributionsList = document.getElementById('contributionsList');
-            if (contributionsList) {
-                contributionsList.innerHTML = '';
-                additionalContent[currentLang].contributions.forEach(item => {
-                    const li = document.createElement('li');
-                    li.textContent = item;
-                    if (currentLang === 'ar') {
-                        li.classList.add('arabic-text');
-                    }
-                    contributionsList.appendChild(li);
                 });
             }
             

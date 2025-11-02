@@ -1132,3 +1132,112 @@ h1, h2, h3, h4, h5 {
         font-size: 4rem;
     }
 }
+
+
+/* Navbar brand logo circle */
+.navbar-brand img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-right: 10px;
+}
+
+/* Mobile Accordion Styles */
+.mobile-accordion-intro {
+    display: none;
+}
+
+/* Additional Author Information Styles */
+.participation-section, .work-experience-section, .brief-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eaeaea;
+}
+
+.participation-list, .work-experience-list, .brief-list {
+    columns: 2;
+    column-gap: 30px;
+}
+
+.participation-list li, .work-experience-list li, .brief-list li {
+    margin-bottom: 8px;
+    break-inside: avoid;
+}
+
+@media (max-width: 768px) {
+    .participation-list, .work-experience-list, .brief-list {
+        columns: 1;
+    }
+    
+    .horizontal-accordion {
+        display: none;
+    }
+    
+    .mobile-accordion-intro {
+        display: block;
+    }
+    
+    .mobile-accordion-item {
+        margin-bottom: 10px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .mobile-accordion-header {
+        padding: 15px;
+        background-color: #f8f9fa;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 500;
+    }
+    
+    .mobile-accordion-header h3 {
+        margin: 0;
+        font-size: 1.1rem;
+    }
+    
+    .mobile-accordion-content {
+        padding: 0 15px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    
+    .mobile-accordion-item.active .mobile-accordion-content {
+        padding: 15px;
+        max-height: 500px;
+    }
+    
+    .mobile-accordion-icon {
+        transition: transform 0.3s ease;
+    }
+    
+    .mobile-accordion-item.active .mobile-accordion-icon {
+        transform: rotate(180deg);
+    }
+}
+
+@media (min-width: 769px) {
+    .horizontal-accordion {
+        display: flex;
+    }
+}
+
+/* Navbar brand logo circle */
+.navbar-brand img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+/* Ensure brand text is always visible */
+.navbar-brand span {
+    display: inline !important;
+    visibility: visible !important;
+}
